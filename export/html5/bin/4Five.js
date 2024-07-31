@@ -900,13 +900,13 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "2";
+	app.meta.h["build"] = "1";
 	app.meta.h["company"] = "HaxeFlixel";
 	app.meta.h["file"] = "4Five";
 	app.meta.h["name"] = "4Five";
 	app.meta.h["packageName"] = "com.example.myapp";
 	app.meta.h["version"] = "0.0.1";
-	var attributes = { allowHighDPI : true, alwaysOnTop : false, borderless : false, element : null, frameRate : 60, height : 480, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, title : "4Five", width : 640, x : null, y : null};
+	var attributes = { allowHighDPI : true, alwaysOnTop : false, borderless : false, element : null, frameRate : 60, height : 720, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, title : "4Five", width : 1280, x : null, y : null};
 	attributes.context = { antialiasing : 0, background : 0, colorDepth : 32, depth : true, hardware : true, stencil : true, type : null, vsync : false};
 	if(app.__window == null) {
 		if(config != null) {
@@ -3825,7 +3825,7 @@ ManifestResources.init = function(config) {
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf);
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf);
 	var bundle;
-	var data = "{\"name\":null,\"assets\":\"aoy4:pathy34:assets%2Fdata%2Fdata-goes-here.txty4:sizezy4:typey4:TEXTy2:idR1y7:preloadtgoR0y36:assets%2Fimages%2Fimages-go-here.txtR2zR3R4R5R7R6tgoR0y36:assets%2Fmusic%2Fmusic-goes-here.txtR2zR3R4R5R8R6tgoR0y36:assets%2Fsounds%2Fsounds-go-here.txtR2zR3R4R5R9R6tgoR2i8220R3y5:MUSICR5y26:flixel%2Fsounds%2Fbeep.mp3y9:pathGroupaR11y26:flixel%2Fsounds%2Fbeep.ogghR6tgoR2i39706R3R10R5y28:flixel%2Fsounds%2Fflixel.mp3R12aR14y28:flixel%2Fsounds%2Fflixel.ogghR6tgoR2i6840R3y5:SOUNDR5R13R12aR11R13hgoR2i33629R3R16R5R15R12aR14R15hgoR2i15744R3y4:FONTy9:classNamey35:__ASSET__flixel_fonts_nokiafc22_ttfR5y30:flixel%2Ffonts%2Fnokiafc22.ttfR6tgoR2i29724R3R17R18y36:__ASSET__flixel_fonts_monsterrat_ttfR5y31:flixel%2Ffonts%2Fmonsterrat.ttfR6tgoR0y33:flixel%2Fimages%2Fui%2Fbutton.pngR2i277R3y5:IMAGER5R23R6tgoR0y36:flixel%2Fimages%2Flogo%2Fdefault.pngR2i505R3R24R5R25R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
+	var data = "{\"name\":null,\"assets\":\"aoy4:pathy34:assets%2Fdata%2Fdata-goes-here.txty4:sizezy4:typey4:TEXTy2:idR1y7:preloadtgoR0y36:assets%2Fimages%2Fimages-go-here.txtR2zR3R4R5R7R6tgoR0y26:assets%2Fimages%2Flogo.pngR2i57804R3y5:IMAGER5R8R6tgoR0y32:assets%2Fimages%2Fplaybutton.pngR2i373619R3R9R5R10R6tgoR0y32:assets%2Fimages%2Fplaybutton.xmlR2i822R3R4R5R11R6tgoR0y36:assets%2Fmusic%2Fmusic-goes-here.txtR2zR3R4R5R12R6tgoR0y36:assets%2Fsounds%2Fsounds-go-here.txtR2zR3R4R5R13R6tgoR2i8220R3y5:MUSICR5y26:flixel%2Fsounds%2Fbeep.mp3y9:pathGroupaR15y26:flixel%2Fsounds%2Fbeep.ogghR6tgoR2i39706R3R14R5y28:flixel%2Fsounds%2Fflixel.mp3R16aR18y28:flixel%2Fsounds%2Fflixel.ogghR6tgoR2i6840R3y5:SOUNDR5R17R16aR15R17hgoR2i33629R3R20R5R19R16aR18R19hgoR2i15744R3y4:FONTy9:classNamey35:__ASSET__flixel_fonts_nokiafc22_ttfR5y30:flixel%2Ffonts%2Fnokiafc22.ttfR6tgoR2i29724R3R21R22y36:__ASSET__flixel_fonts_monsterrat_ttfR5y31:flixel%2Ffonts%2Fmonsterrat.ttfR6tgoR0y33:flixel%2Fimages%2Fui%2Fbutton.pngR2i277R3R9R5R27R6tgoR0y36:flixel%2Fimages%2Flogo%2Fdefault.pngR2i505R3R9R5R28R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
 	var manifest = lime_utils_AssetManifest.parse(data,ManifestResources.rootPath);
 	var library = lime_utils_AssetLibrary.fromManifest(manifest);
 	lime_utils_Assets.registerLibrary("default",library);
@@ -5007,11 +5007,63 @@ PlayState.__name__ = "PlayState";
 PlayState.__super__ = flixel_FlxState;
 PlayState.prototype = $extend(flixel_FlxState.prototype,{
 	create: function() {
-		var sprite = new flixel_FlxSprite(10,10);
 		flixel_FlxState.prototype.create.call(this);
+		var logo = new flixel_FlxSprite();
+		logo.loadGraphic("assets/images/logo.png");
+		var this1 = logo.scale;
+		var x = 0.5;
+		var y = 0.5;
+		if(y == null) {
+			y = 0;
+		}
+		if(x == null) {
+			x = 0;
+		}
+		this1.set_x(x);
+		this1.set_y(y);
+		if(17 == 1 || 17 == 17) {
+			logo.set_x((flixel_FlxG.width - logo.get_width()) / 2);
+		}
+		if(17 == 16 || 17 == 17) {
+			logo.set_y((flixel_FlxG.height - logo.get_height()) / 2);
+		}
+		logo.set_y(logo.y - 100);
+		var buttonGraphics = flixel_graphics_FlxGraphic.fromAssetKey("assets/images/playbutton.png");
+		var buttonFrames = flixel_graphics_frames_FlxAtlasFrames.fromSparrow(buttonGraphics,"assets/images/playbutton.xml");
+		this.playbutton = new flixel_FlxSprite();
+		this.playbutton.set_frames(buttonFrames);
+		this.playbutton.animation.addByPrefix("idle","playbtn",24,true);
+		this.playbutton.animation.addByPrefix("pressed","playPRESSED",24,false);
+		this.playbutton.animation.play("idle");
+		var this1 = this.playbutton.scale;
+		var x = 0.5;
+		var y = 0.5;
+		if(y == null) {
+			y = 0;
+		}
+		if(x == null) {
+			x = 0;
+		}
+		this1.set_x(x);
+		this1.set_y(y);
+		var _this = this.playbutton;
+		if(17 == 1 || 17 == 17) {
+			_this.set_x((flixel_FlxG.width - _this.get_width()) / 2);
+		}
+		if(17 == 16 || 17 == 17) {
+			_this.set_y((flixel_FlxG.height - _this.get_height()) / 2);
+		}
+		var fh = this.playbutton;
+		fh.set_y(fh.y + 200);
+		this.add(this.playbutton);
+		this.add(logo);
 	}
 	,update: function(elapsed) {
 		flixel_FlxState.prototype.update.call(this,elapsed);
+		var _this = flixel_FlxG.keys.justPressed;
+		if(_this.keyManager.checkStatusUnsafe(32,_this.status)) {
+			this.playbutton.animation.play("pressed");
+		}
 	}
 	,__class__: PlayState
 });
@@ -67908,7 +67960,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 527952;
+	this.version = 463274;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
