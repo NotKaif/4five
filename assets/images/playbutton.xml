@@ -9,5 +9,5 @@
 	<SubTexture name="playPRESSED0004" x="1323" y="5" width="654" height="499"/>
 	<SubTexture name="playPRESSED0005" x="5" y="509" width="654" height="499"/>
 	<SubTexture name="playPRESSED0006" x="664" y="509" width="654" height="499"/>
-	<SubTexture name="playbtn0000" x="1323" y="509" width="340" height="209"/>
+	<SubTexture name="playbtn0000" x="664" y="509" width="654" height="499"/>
 </TextureAtlas>
